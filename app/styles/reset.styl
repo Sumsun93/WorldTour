@@ -1,0 +1,228 @@
+// @stylint off
+/*
+ * Elements
+ */
+html
+body
+div
+span
+object
+iframe
+ul
+ol
+h1
+h2
+h3
+h4
+h5
+h6
+p
+blockquote
+pre
+abbr
+address
+cite
+code
+del
+dfn
+em
+img
+ins
+kbd
+q
+samp
+small
+strong
+sub
+sup
+var
+b
+i
+dl
+dt
+dd
+li
+fieldset
+form
+label
+legend
+table
+caption
+tbody
+tfoot
+thead
+tr
+th
+td
+article
+aside
+canvas
+details
+figcaption
+figure
+footer
+header
+menu
+nav
+section
+summary
+time
+mark
+audio
+video
+picture
+main
+button
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	font: inherit
+article
+aside
+details
+figcaption
+figure
+footer
+header
+menu
+nav
+section
+picture
+main
+	display: block
+
+/*
+ * Specific display
+ */
+blockquote
+q
+	quotes: none
+	&::before
+	&::after
+		content: none
+del
+	text-decoration: line-through
+abbr[title]
+dfn[title]
+	border-bottom: 1px dotted
+	cursor: help
+table
+	border-collapse: collapse
+	border-spacing: 0
+hr
+	display: block
+	height: 1px
+	width: 100%
+	border: 0
+	margin: 0
+	padding: 0
+
+/*
+ * Root
+ */
+html
+	overflow-y: scroll
+	-webkit-overflow-scrolling: touch
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
+	text-size-adjust: 100%
+	touch-action: manipulation
+
+/*
+ * States
+ */
+a
+input
+button
+	&:hover
+	&:active
+	&:focus
+		outline: 0
+
+a
+	color: inherit
+
+/*
+ * Editorial elements
+ */
+ul
+ol
+li
+	list-style: none
+strong
+th
+	font-weight: 400
+th
+	text-align: left
+em
+	font-style: normal
+sub
+sup
+	font-size: 75%
+	line-height: 0
+	position: relative
+sup
+	top: -0.25em
+sub
+	bottom: -0.25em
+
+/*
+ * Form elements
+ */
+button
+input
+select
+textarea
+	margin: 0
+	outline: 0
+button
+input[type=submit]
+	background: 0
+	border: 0
+	width: auto
+	overflow: visible
+input
+select
+	vertical-align: middle
+input
+textarea
+button
+	appearance: none
+	-webkit-appearance: none
+	border-radius: 0
+label
+input[type=button]
+input[type=submit]
+input[type=image]
+button
+a
+	cursor: pointer
+
+/*
+ * Ergonomics
+ */
+label
+nav a
+	user-select: none
+textarea
+	display: block
+	overflow: auto
+	resize: none
+a
+	background-color: transparent
+	text-decoration: none
+
+/*
+ * Box-sizing
+ */
+*
+::before
+::after
+	box-sizing: border-box
+
+/*
+ * Viewport
+ */
+@viewport
+	width: device-width
+	zoom: 1

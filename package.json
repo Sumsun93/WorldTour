@@ -1,0 +1,40 @@
+{
+  "name": "BaseFront",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:O-clock-Dev/BaseFront.git",
+  "author": "Alexandre Bourdeaud'hui <alexandre@oclock.io>",
+  "license": "MIT",
+  "scripts": {
+    "start": "brunch watch --server",
+    "build": "brunch build --production",
+    "build:dev": "brunch build",
+    "test": "test(){ if [ -z $1 ]; then mocha tests/.setup.js 'tests/**/*.test.js'; else mocha tests/.setup.js $1 $2; fi; }; test",
+    "lint": "eslint --fix '{app,tests}/**/*.js'",
+    "pretty": "prettier --write '{app,tests}/**/*.js'",
+    "precommit": "lint-staged && yarn test"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn pretty",
+      "yarn lint",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "emotion": "^9.1.3",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-emotion": "^9.1.3",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^4.0.0",
+    "theme-oclock": "git+ssh://git@github.com:O-clock-Dev/theme-oclock.git#1.0.3"
+  },
+  "devDependencies": {
+    "config-oclock": "git+ssh://git@github.com:O-clock-Dev/config-oclock#1.0.22",
+    "config-oclock-front": "git+ssh://git@github.com:O-clock-Dev/config-oclock-front#1.0.13"
+  }
+}

@@ -1,0 +1,64 @@
+// @stylint off
+$font-file-name = "oclock"
+$weights = {
+	// thin: {
+	// 	weight: 100
+	// 	style: normal
+	// }
+	light: {
+		weight: 200
+		style: normal
+	}
+	regular: {
+		weight: 400
+		style: normal
+	}
+	medium: {
+		weight: 600
+		style: normal
+	}
+	bold: {
+		weight: 700
+		style: normal
+	}
+	black: {
+		weight: 900
+		style: normal
+	}
+	// thinitalic: {
+	// 	weight: 100
+	// 	style: italic
+	// }
+	// lightitalic: {
+	// 	weight: 200
+	// 	style: italic
+	// }
+	regularitalic: {
+		weight: 400
+		style: italic
+	}
+	// mediumitalic: {
+	// 	weight: 600
+	// 	style: italic
+	// }
+	// bolditalic: {
+	// 	weight: 700
+	// 	style: italic
+	// }
+	// blackitalic: {
+	// 	weight: 900
+	// 	style: italic
+	// }
+}
+
+/*
+ * Code
+ */
+for $name, $font in $weights
+	@font-face
+		font-family: "Oclock"
+		src: unquote('
+			url("../fonts/' + $font-file-name + '-' + $name + '.woff2") format("woff2")
+		')
+		font-weight: $font.weight
+		font-style: $font.style
