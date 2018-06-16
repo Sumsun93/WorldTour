@@ -7,7 +7,8 @@ import { applyMiddleware, compose, createStore } from 'redux';
  * Local Import
  */
 import reducer from './reducer';
-import ajax from './middlewares/ajax';
+// import ajax from './middlewares/ajax';
+import socket from './middlewares/socket';
 
 /*
  * Redux DevTools Extension
@@ -23,7 +24,7 @@ if (process.env.NODE_ENV !== 'production') {
 /*
  * ...Middlewares
  */
-const allMiddlewares = applyMiddleware(ajax);
+const allMiddlewares = applyMiddleware(socket);
 const allMiddlewaresCompose = compose(allMiddlewares, ...devTools);
 
 // Store

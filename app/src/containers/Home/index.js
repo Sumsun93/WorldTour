@@ -9,7 +9,7 @@ import { bindActionCreators } from 'redux';
  */
 import Home from 'src/components/Home';
 import { changeInput } from 'src/store/ducks/Home';
-import { createRoom } from 'src/store/middlewares/ajax';
+import { createRoom } from 'src/store/middlewares/socket';
 
 /*
  * Code
@@ -18,6 +18,7 @@ import { createRoom } from 'src/store/middlewares/ajax';
 // State
 const mapStateToProps = state => ({
   pseudo: state.home.pseudo,
+  room: Object.keys(state.room).length > 0,
 });
 
 // Actions

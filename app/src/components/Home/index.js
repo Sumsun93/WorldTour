@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 
 /*
  * Local Import
@@ -19,6 +20,7 @@ export default class Home extends React.Component {
   static propTypes = {
     actions: PropTypes.objectOf(PropTypes.func.isRequired).isRequired,
     pseudo: PropTypes.string.isRequired,
+    room: PropTypes.bool.isRequired,
   };
 
   handleChange = (evt) => {
@@ -26,30 +28,47 @@ export default class Home extends React.Component {
     changeInput(evt.target.value);
   }
 
-  handleSubmit = (evt) => {
-    const { createRoom } = this.props.actions;
+  handleSubmitCreate = (evt) => {
+    const { actions, pseudo } = this.props;
+    const { createRoom } = actions;
     evt.preventDefault();
-    createRoom();
+    if (pseudo) {
+      createRoom();
+    }
+  }
+
+  handleSubmitJoin = () => {
+    const { actions, pseudo } = this.props;
+    if (pseudo) {
+      console.log('OK');
+    }
   }
 
   render() {
-    const { pseudo } = this.props;
+    const { pseudo, room } = this.props;
+
+    if (room) {
+      return <Redirect to="/room" />;
+    }
 
     return (
       <div id="homediv">
         <h1>World Tour</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="createparty">
-            Pseudo
-            <input
-              id="createparty"
-              type="text"
-              onChange={this.handleChange}
-              value={pseudo}
-            />
-          </label>
-          <button>Creer une partie</button>
-        </form>
+        <div id="form">
+          <form onSubmit={this.handleSubmitCreate}>
+            <label htmlFor="createparty">
+              Pseudo
+              <input
+                id="createparty"
+                type="text"
+                onChange={this.handleChange}
+                value={pseudo}
+              />
+            </label>
+            <button>Creer une partie</button>
+          </form>
+          <button onClick={this.handleSubmitJoin} name="join">Rejoindre une partie</button>
+        </div>
       </div>
     );
   }

@@ -40,7 +40,6 @@ export const changeInput = datas => ({
   type: CHANGE_INPUT,
   datas,
 });
-
 /*
  * Selectors
  */
