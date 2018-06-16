@@ -6,6 +6,7 @@
  * Types
  */
 const GET_DATAS = 'GET_DATAS';
+const CREATE_ROOM = 'CREATE_ROOM';
 
 /*
  * Middleware
@@ -20,6 +21,12 @@ export default store => next => (action) => {
       // eslint-disable-next-line no-console
       console.log('store', store);
       break;
+
+    case CREATE_ROOM: {
+      const { pseudo } = store.getState().home;
+      console.log(pseudo);
+      break;
+    }
 
     /*
      * If the triggered action does not interest us,
@@ -37,4 +44,8 @@ export default store => next => (action) => {
  */
 export const getDatas = () => ({
   type: GET_DATAS,
+});
+
+export const createRoom = () => ({
+  type: CREATE_ROOM,
 });
